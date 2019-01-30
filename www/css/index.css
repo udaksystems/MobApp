@@ -107,3 +107,37 @@ h1 {
     position: relative;
     left: 0px;
 }
+.arrow-right{
+	float:right;
+    padding:85px 10px
+	
+}
+.arrow-left{
+	float:left;
+    padding:85px 10px;	
+}
+.lock {
+    position: relative;
+    padding: 120px 85px;
+}
+.menu {
+    position:absolute;             
+    right:10%;
+    top:7%;
+}	
+.circle {
+	position:absolute;             
+    left:50%;
+    top:50%;                 
+    text-align:center;
+    padding:160px 190px 0px 0px;     
+    margin:-115px 0px 0px -112px;
+}
+.circle-sensor {
+	position:absolute;             
+    left:50%;
+    top:50%;                 
+    text-align:center;
+    padding:160px 190px 0px 0px;     
+    margin:-115px 0px 0px -112px;
+}	

@@ -38,8 +38,27 @@ var app = {
 
 
         $( ".lamp-button" ).click(function() {
-          $('.lamp').css('left', '-100px');
+          $('.lamp').css('left', '400px');
         });
+		
+		
+		
+		
+//	        fuction change(){
+//			var image = document.getElementById("lock");
+//			image.src = "lock-Open"
+//		}
+//				var image_tracker ='lock';
+//		function change (){
+//			var image = document.getElementById('lock');
+//			if(image_tracker=='lock') {
+//				image.src ='lock-Open';
+//				imgae_tracker = 'lock-Open';
+//			}else{
+//				image.src = 'lock.png';
+//				image_tracker = 'lock';
+//			}
+//		}	
     }
 };
 
