@@ -81,10 +81,14 @@ $( document ).ready(function() {
 		if($(this).hasClass('lock-open')) {
 			//$('.circle-img-1').hide();
 			$('.circle-img-2').fadeIn();
+			$('.arrowRight').hide();
+			$('.arrowLeft').hide();
 		}
 		else {
 			$('.circle-img-2').fadeOut();
 			//$('.circle-img-1').show();
+			$('.arrowRight').show();
+			$('.arrowLeft').show();
 		}
 	});
 	
