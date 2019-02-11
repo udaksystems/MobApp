@@ -254,4 +254,109 @@ body {
   border-right-width: 4px;
 }
 
+#toggle.on span {
+  background-color: transparent;
+}
+#toggle.on span:before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#toggle.on span:after {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+#toggle.on + #menu-anim {
+  opacity: 1;
+  visibility: visible;
+}
 
+/* menu appearance*/
+#menu-anim {
+	 z-index: 999;
+  float:right;
+  right: 18px;
+  top: 90px;
+  position: relative;
+  color: #999;
+  width: 80px;
+  padding: 10px;
+  margin: auto;
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  text-align: center;
+  border-radius: 4px;
+  background: #eee;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  /* just for this demo */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s;
+}
+#menu-anim:after {
+  position: absolute;
+  margin-top: -15px;
+  left: 36px;
+  content: "";
+  display: block;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid #eee;
+}
+ul, li, li a {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+li a {
+  padding: 5px;
+  color: #888;
+  text-decoration: none;
+  transition: all .2s;
+}
+li a:hover,
+li a:focus {
+  background: #1ABC9C;
+  color: #fff;
+}
+
+#toggle.cross + #menu-anim {
+    opacity: 1;
+    visibility: visible;
+}
+
+#web {
+ margin-top: 20px;	
+
+}
+
+#menu-options {
+ margin-top: 35px;
+	
+}	
+.options-panel {
+  z-index: 999;
+  float:right;
+  right: 18px;
+  top: 90px;
+   position:fixed;   
+   height: 100%;
+   width: 100%;
+   background-color: red;
+  color: #999;
+  width: 80px;
+  padding: 130px;
+  margin: auto;
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  text-align: center;
+  border-radius: 4px;
+  background: #eee;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  /* just for this demo */
+
+
+  transition: opacity .4s;
+  display:none;
+}
+
+
+
+
+.options-panel

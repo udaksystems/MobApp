@@ -74,6 +74,13 @@ $( document ).ready(function() {
 	$("div.menu-anim").click(function() {
 		
 		$(this).toggleClass("cross");
+		//$(this).toggleClass("on");
+	});
+	
+	$('.options-click').click(function(e) {
+		
+		e.preventDefault();
+		$('.options-panel').fadeIn('slow');
 	});
 	  
 	$(".lock svg").click(function() {
@@ -114,14 +121,56 @@ var img = $('.circle-img-2');
     img.css('-ms-transform', 'rotate(' + degree + 'deg)');
   }
   
+var theToggle = document.getElementById('toggle');
 
+// based on Todd Motto functions
+// https://toddmotto.com/labs/reusable-js/
 
+// hasClass
+function hasClass(elem, className) {
+	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+// addClass
+function addClass(elem, className) {
+    if (!hasClass(elem, className)) {
+    	elem.className += ' ' + className;
+    }
+}
+// removeClass
+function removeClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+	if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+}
+// toggleClass
+function toggleClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(" " + className + " ") >= 0 ) {
+            newClass = newClass.replace( " " + className + " " , " " );
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+        elem.className += ' ' + className;
+    }
+}
 
+theToggle.onclick = function() {
+   toggleClass(this, 'on');
+   return false;
+}
 
-
-
-
-
+	$(".menu-options").click(function() {
+		$(this).toggleClass('options-panel');
+		if($(this).hasClass('options-panel')) {
+			//$('.circle-img-1').hide();
+			$('.circle-img-2').fadeIn();
+		}
+	});
 
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiPGFub255bW91cz4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQSxNQUFBLENBQUEsRUFBQTs7RUFBQSxDQUFBLEdBQUksV0FBQSxDQUFZLFFBQUEsQ0FBQSxDQUFBO1dBQ2QsQ0FBQSxDQUFFLEtBQUYsQ0FBUSxDQUFDLFdBQVQsQ0FBcUIsT0FBckI7RUFEYyxDQUFaLEVBRUYsSUFGRTs7RUFJSixDQUFBLENBQUUsS0FBRixDQUFRLENBQUMsS0FBVCxDQUFlLFFBQUEsQ0FBQSxDQUFBO0lBQ2IsYUFBQSxDQUFjLENBQWQ7V0FDQSxDQUFBLENBQUUsS0FBRixDQUFRLENBQUMsV0FBVCxDQUFxQixPQUFyQjtFQUZhLENBQWY7O0VBSUEsTUFBQSxHQUFTLFFBQUEsQ0FBQSxDQUFBO1dBQ1AsQ0FBQSxDQUFFLE1BQUYsQ0FBUyxDQUFDLEdBQVYsQ0FDRTtNQUFBLFlBQUEsRUFBYyxDQUFDLENBQUMsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxXQUFQLEdBQXFCLEdBQXRCLENBQUEsR0FBNkIsQ0FBOUIsQ0FBRixHQUFxQztJQUFuRCxDQURGO0VBRE87O0VBSVQsQ0FBQSxDQUFFLE1BQUYsQ0FBUyxDQUFDLE1BQVYsQ0FBaUIsTUFBakI7O0VBQ0EsTUFBQSxDQUFBO0FBYkEiLCJzb3VyY2VzQ29udGVudCI6WyJpID0gc2V0SW50ZXJ2YWwgLT5cbiAgJChcImRpdlwiKS50b2dnbGVDbGFzcyBcImNyb3NzXCJcbiwgMTUwMFxuXG4kKFwiZGl2XCIpLmNsaWNrIC0+XG4gIGNsZWFySW50ZXJ2YWwgaVxuICAkKFwiZGl2XCIpLnRvZ2dsZUNsYXNzIFwiY3Jvc3NcIlxuXG5yZXNpemUgPSAtPlxuICAkKFwiYm9keVwiKS5jc3NcbiAgICBcIm1hcmdpbi10b3BcIjogfn4oKHdpbmRvdy5pbm5lckhlaWdodCAtIDE1MCkgLyAyKSArIFwicHhcIlxuICAgIFxuJCh3aW5kb3cpLnJlc2l6ZSByZXNpemVcbnJlc2l6ZSgpXG4iXX0=
 //# sourceURL=coffeescript
