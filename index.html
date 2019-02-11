@@ -28,7 +28,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -41,7 +41,7 @@
 	<header class="header">
         <div class="logo-name">
             <h1><b>UDAK</b><br>SYSTEMS</h1>
-        </div>  
+        </div>
 	<header>
 		<!--<div class="menu"><img class="menu" src="img/menu.png" width="40" height="40" onclick="change();"/></div> -->
 		<!--<div class="menu"><img class="menu-x" src="img/menu-x.png" width="40" height="40" onclick="change();"/></div>                  /* jāpievieno javasript lai mainās no menu uz menu-x */-->
@@ -53,28 +53,42 @@
 	</svg>
 	</div>
 
-		
-		
-		
-        <div class="lamp"><img class="lamp-button" src="img/lamp.svg" width="52" height="52"/></div>
-		
+
+
+
+          <div class="lamp"><img class="lamp-button" src="img/lamp.svg" width="52" height="52"/></div>
+
+
+          <div ng-app="app">
+            <div class="whole-color-wheel">
+              <color-picker color="foo"></color-picker>
+              <p style="margin-top: 10px; width: 100%;">color: {{ foo }} </p>
+            </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script type="text/javascript">
+            (function(){
+                'use strict';
+                angular.module('app', ['colorPicker']);
+            }());
+        </script>
+      </div>
         <div class="circle">
 			<img class="circle-img-1" src="img/circle.png" width="252" height="252"/>
 			<img class="circle-img-2" style="display: none;" src="img/circle-sensor.png" width="252" height="252"/>
-		
+
 		</div>
         <!-- <div class="circle-sensor"><img class="circle-sensor" src="img/circle-sensor.png" width="232" height="232"/></div>	           /* kad lock-open tad parādās šis aplis */-->
-		
-       <!-- <div class="arrow-left"><img class="arrow-left" src="img/arrow-left.png" width="40" height="40"/></div>	
+
+       <!-- <div class="arrow-left"><img class="arrow-left" src="img/arrow-left.png" width="40" height="40"/></div>
         <div class="arrow-right"><img class="arrow-right" id="lock "src="img/arrow-right.png" width="40" height="40"/></div> --->
 
-			
-		
+
+
 		<div class="lock">
 			<svg style="width: 40px; height: auto;" viewBox="0 -135 100 135" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			
-				
-				
+
+
+
 				<g id="lock" fill="currentColor">
 				  <g id="lock-body">
 					<path d="M0,0 h100 v-65 l-10, -10 h-80 l-10, 10z" />
@@ -87,14 +101,24 @@
 			<!--img class="lock" src="img/lock.png" width="40" height="40" onclick="change();"/-->
 		</div>
 		<!-- <div class="lock"><img class="lock-Open" src="img/lock-Open.png" width="40" height="40"/></div> 		/* jāpievieno javasript lai mainās no lock uz lock-Open */ -->
-		
-		
+
+
 		<div class="arrowRight"></div>
 		<div class="arrowLeft"></div>
 
 
-        
-        <script type="text/javascript" src="js/jquery.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" scr="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+
+
+        <div ng-app="app">
+            <color-picker color="foo"></color-picker>
+          <!--<p style="margin-top: 10px; width: 100%;">color: {{ foo }}</p>-->
+        </div>
+
+        <script type="text/javascript"></script>
     </body>
 </html>
