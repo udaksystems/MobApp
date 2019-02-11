@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Rotating table</title>
+
+    </head>
+
+    <body>
+	<header class="header">
+        <div class="logo-name">
+            <h1><b>UDAK</b><br>SYSTEMS</h1>
+        </div>  
+	<header>
+		<!--<div class="menu"><img class="menu" src="img/menu.png" width="40" height="40" onclick="change();"/></div> -->
+		<!--<div class="menu"><img class="menu-x" src="img/menu-x.png" width="40" height="40" onclick="change();"/></div>                  /* jāpievieno javasript lai mainās no menu uz menu-x */-->
+	<div class="menu-anim">
+	<svg style="width: 100px; height: auto;" viewBox="0 0 800 600">
+    <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
+    <path d="M300,320 L540,320" id="middle"></path>
+    <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+	</svg>
+	</div>
+
+		
+		
+		
+        <div class="lamp"><img class="lamp-button" src="img/lamp.svg" width="52" height="52"/></div>
+		
+        <div class="circle">
+			<img class="circle-img-1" src="img/circle.png" width="252" height="252"/>
+			<img class="circle-img-2" style="display: none;" src="img/circle-sensor.png" width="252" height="252"/>
+		
+		</div>
+        <!-- <div class="circle-sensor"><img class="circle-sensor" src="img/circle-sensor.png" width="232" height="232"/></div>	           /* kad lock-open tad parādās šis aplis */-->
+		
+       <!-- <div class="arrow-left"><img class="arrow-left" src="img/arrow-left.png" width="40" height="40"/></div>	
+        <div class="arrow-right"><img class="arrow-right" id="lock "src="img/arrow-right.png" width="40" height="40"/></div> --->
+
+			
+		
+		<div class="lock">
+			<svg style="width: 40px; height: auto;" viewBox="0 -135 100 135" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			
+				
+				
+				<g id="lock" fill="currentColor">
+				  <g id="lock-body">
+					<path d="M0,0 h100 v-65 l-10, -10 h-80 l-10, 10z" />
+				  </g>
+				  <g id="lock-shackle">
+					<path d="M10,-75 v-30 q 0,-30,30,-30 h20 q 30,0,30,30 v30 h-15 v-30 q 0,-15,-15,-15 h-20 q -15,0,-15,15 v30z" />
+				  </g>
+				</g>
+			  </svg>
+			<!--img class="lock" src="img/lock.png" width="40" height="40" onclick="change();"/-->
+		</div>
+		<!-- <div class="lock"><img class="lock-Open" src="img/lock-Open.png" width="40" height="40"/></div> 		/* jāpievieno javasript lai mainās no lock uz lock-Open */ -->
+		
+		
+		<div class="arrowRight"></div>
+		<div class="arrowLeft"></div>
+
+
+        
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
