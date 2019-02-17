@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Rotating table</title>
+
+    </head>
+
+    <body>
+	<header class="header">
+        <div class="logo-name">
+            <h1><b>UDAK</b><br>SYSTEMS</h1>
+        </div>  
+	<header>
+		<!--<div class="menu"><img class="menu" src="img/menu.png" width="40" height="40" onclick="change();"/></div> -->
+		<!--<div class="menu"><img class="menu-x" src="img/menu-x.png" width="40" height="40" onclick="change();"/></div>                  /* jāpievieno javasript lai mainās no menu uz menu-x */-->
+	<div class="menu-anim" id="toggle">
+	<svg style="width: 100px; height: auto;" viewBox="0 0 800 600">
+    <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
+    <path d="M300,320 L540,320" id="middle"></path>
+    <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+	</svg>
+	</div>
+		
+	<div id="menu-anim">
+	<ul>
+		<li><a target="_blank" href="http://test.lv"><svg class="margin-right-15" height="28px" version="1.1" viewbox="0 0 28 28" width="28px"  id="web" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <g fill="none" fill-rule="evenodd" id="Business-landing-page-" stroke="none" stroke-width="1"> <g fill="black" id="Home-Page---Desktop-UI" transform="translate(-236.000000, -515.000000)"> <g id="Hero-Banner" transform="translate(-2.000000, 199.000000)"> <g id="sub-title" transform="translate(237.999306, 316.000000)"> <path d="M22.2064409,22.1919004 C21.4977561,22.9005852 20.7182936,23.4954643 19.8921349,23.9819756 L19.8921349,19.8148439 L24.0259493,19.8148439 C23.5343022,20.6675874 22.9293243,21.469017 22.2064409,22.1919004 L22.2064409,22.1919004 Z M10.5446261,25.0549936 L10.5446261,19.8148439 L17.4717916,19.8148439 L17.4717916,25.0538284 C15.22015,25.7548311 12.7963973,25.7558237 10.5446261,25.0549936 L10.5446261,25.0549936 Z M2.92698824,17.3945438 C2.2514051,15.1810962 2.25166404,12.8052049 2.92685876,10.5917574 L8.12432602,10.5917574 L8.12432602,17.3945438 L2.92698824,17.3945438 Z M5.8081643,5.79362388 C6.51417327,5.08757175 7.29471477,4.49407365 8.12432602,4.0084686 L8.12432602,8.17141412 L3.98123282,8.17141412 C4.47434723,7.32164844 5.08135354,6.52039148 5.8081643,5.79362388 L5.8081643,5.79362388 Z M17.4717916,2.93886004 L17.4717916,8.17141412 L10.5446261,8.17141412 L10.5446261,2.94339155 C12.791391,2.24817188 15.2171721,2.24122357 17.4717916,2.93886004 L17.4717916,2.93886004 Z M10.5446261,17.3945438 L17.4717916,17.3945438 L17.4717916,10.5917574 L10.5446261,10.5917574 L10.5446261,17.3945438 Z M25.0784676,10.5917574 C25.7494329,12.8079238 25.7428298,15.1861456 25.073375,17.3945438 L19.8921349,17.3945438 L19.8921349,10.5917574 L25.0784676,10.5917574 Z M24.7372234,4.97626928 L23.016545,6.69694767 C23.3975802,7.16658455 23.7333865,7.66051894 24.0290566,8.17141412 L19.8921349,8.17141412 L19.8921349,4.00669915 C20.3804157,4.29365152 20.8526852,4.61815066 21.3029444,4.98351969 L23.0230618,3.26340234 C17.5048069,-1.38238617 9.20998907,-1.03108639 4.09672155,4.08218113 C-1.07921026,9.25811294 -1.3493313,17.506321 3.27936694,23.0071403 L4.99629066,21.2901735 C4.61508293,20.8201913 4.27858608,20.325998 3.98188018,19.8148439 L8.12432602,19.8148439 L8.12432602,23.9835293 C7.63475051,23.6953254 7.16127264,23.3698336 6.70980495,23.0036878 L4.9929244,24.7206115 C10.4938301,29.3493529 18.741995,29.0791887 23.9178404,23.9033 C29.0257133,18.7954272 29.3811562,10.4920642 24.7372234,4.97626928 L24.7372234,4.97626928 Z" id="internet-speed-icon-"></path> </g> </g> </g> </g> </svg></a></li>
+		<li> <a class="options-click" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40" id="menu-options" ><path d="M82.4 56.494l-3.9-2.4c.1-1.2.2-2.3.2-3.5v-.5l4.1-2c2.6-1.3 3.7-4.4 2.4-7l-6-12.4c-1.2-2.5-4.5-3.7-7-2.4l-4.1 2c-1.9-1.6-4-2.9-6.2-3.9v-4.6c0-2.9-2.4-5.3-5.3-5.3H42.8c-2.9 0-5.3 2.4-5.3 5.3v4.6c-1.3.6-2.6 1.3-3.8 2.1l-3.9-2.4c-2.4-1.5-5.8-.7-7.2 1.7l-7.3 11.8c-.7 1.2-1 2.6-.6 4 .3 1.4 1.2 2.5 2.4 3.3l3.9 2.4c-.1 1.2-.2 2.3-.2 3.5v.5l-4.1 2c-2.6 1.3-3.7 4.4-2.4 7l6 12.4c1.2 2.5 4.5 3.7 7 2.4l4.1-2c1.9 1.6 4 2.9 6.2 3.9v4.6c0 2.9 2.4 5.3 5.3 5.3h13.8c2.9 0 5.3-2.4 5.3-5.3v-4.6c1.3-.6 2.6-1.3 3.8-2.1l3.9 2.4c.8.5 1.8.8 2.8.8 1.8 0 3.5-.9 4.5-2.5l7.3-11.8c.7-1.2 1-2.6.6-4-.5-1.4-1.3-2.5-2.5-3.3zm-10.8-8.1c.1.8.1 1.5.1 2.3 0 1.2-.1 2.4-.3 3.5-.3 2.1.6 4.2 2.4 5.3l3.4 2.1-5.4 8.8-3.4-2.1c-1.8-1.1-4.1-1-5.8.2-1.4 1-2.9 1.8-4.4 2.5-2 .8-3.3 2.7-3.3 4.8v4H44.6v-4c0-2.1-1.3-4-3.3-4.8-2.3-.9-4.4-2.3-6.2-3.9-1.6-1.4-3.9-1.7-5.8-.8l-3.6 1.7-4.5-9.3 6.8-3.3-.3-2.4c-.1-.8-.1-1.5-.1-2.3 0-1.2.1-2.4.3-3.5.3-2.1-.6-4.2-2.4-5.3l-3.4-2.1 5.4-8.8 3.4 2.1c1.8 1.1 4.1 1 5.8-.2 1.4-1 2.9-1.8 4.4-2.5 2-.8 3.3-2.7 3.3-4.8v-4h10.3v4c0 2.1 1.3 4 3.3 4.8 2.3.9 4.4 2.3 6.2 3.9 1.6 1.4 3.9 1.7 5.8.8l3.6-1.7 4.5 9.3-6.8 3.3z"/><path d="M49.7 35.194c-8.5 0-15.5 6.9-15.5 15.5s6.9 15.5 15.5 15.5 15.5-7 15.5-15.6-6.9-15.4-15.5-15.4zm0 23.9c-4.7 0-8.5-3.8-8.5-8.5s3.8-8.5 8.5-8.5 8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5z"/></svg></a></li>
+	</ul>
+	</div>
+		
+			<div class="options-panel"> 
+			
+				<p>test</p>
+			
+			</div> 
+			<div class="exit-option--panel" src="img/menu-x.svg" ></div> 
+
+	
+		<div class="lamp"><img class="lamp-button" src="img/lamp.svg" width="52" height="52"/></div>
+
+
+        <div class="circle">
+			<img class="circle-img-1" src="img/circle.png" width="252" height="252"/>
+			<img class="circle-img-2" style="display: none;" src="img/circle-sensor.png" width="252" height="252"/>
+		
+		</div>
+        <!-- <div class="circle-sensor"><img class="circle-sensor" src="img/circle-sensor.png" width="232" height="232"/></div>	           /* kad lock-open tad parādās šis aplis */-->
+		
+       <!-- <div class="arrow-left"><img class="arrow-left" src="img/arrow-left.png" width="40" height="40"/></div>	
+        <div class="arrow-right"><img class="arrow-right" id="lock "src="img/arrow-right.png" width="40" height="40"/></div> --->
+
+			
+		
+		<div class="lock">
+			<svg style="width: 40px; height: auto;" viewBox="0 -135 100 135" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			
+				
+				
+				<g id="lock" fill="currentColor">
+				  <g id="lock-body">
+					<path d="M0,0 h100 v-65 l-10, -10 h-80 l-10, 10z" />
+				  </g>
+				  <g id="lock-shackle">
+					<path d="M10,-75 v-30 q 0,-30,30,-30 h20 q 30,0,30,30 v30 h-15 v-30 q 0,-15,-15,-15 h-20 q -15,0,-15,15 v30z" />
+				  </g>
+				</g>
+			  </svg>
+			<!--img class="lock" src="img/lock.png" width="40" height="40" onclick="change();"/-->
+		</div>
+		<!-- <div class="lock"><img class="lock-Open" src="img/lock-Open.png" width="40" height="40"/></div> 		/* jāpievieno javasript lai mainās no lock uz lock-Open */ -->
+		
+		
+		<div class="arrowRight"></div>
+		<div class="arrowLeft"></div>
+		
+
+
+        
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
