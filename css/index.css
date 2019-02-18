@@ -234,8 +234,7 @@ body {
   margin-right: 40px;
 }
 .arrowRight:hover {
-  border-bottom-width: 4px;
-  border-right-width: 4px;
+  
 }
 
 .arrowLeft {
@@ -272,7 +271,8 @@ body {
 
 /* menu appearance*/
 #menu-anim {
-	 z-index: 999;
+	
+	 z-index: 99999999;
   float:right;
   right: 18px;
   top: 99px;
@@ -334,11 +334,11 @@ li a:focus {
 	
 }	
 .options-panel {
-  z-index: 999;
+  z-index: 99999999;
   float:right;
   right: 18px;
-  top: 99px;
-  bottom: 5px;
+  top: 93px;
+  bottom: 3px;
    position:fixed;   
    height: 45%;
    width: 100%;
@@ -357,4 +357,169 @@ li a:focus {
 
   transition: opacity .4s;
   display:none;
+}
+
+
+
+
+
+
+
+.relative {
+  position: relative;
+}
+
+.loader-ring {
+  left: 50%;
+  margin: -120px 0 0 -120px;
+  width: 240px;
+  height: 240px;
+}
+
+.loader-ring-light {
+	  right: 60px;
+  bottom: 70px;
+  position: absolute;
+	width: 251px;
+	height: 251px;
+  -moz-border-radius: 240px;
+  -webkit-border-radius: 240px;
+  border-radius: 240px;
+  -moz-box-shadow: 0 4px 0 #FF0000 inset;
+  -webkit-box-shadow: 0 4px 0 #FF0000 inset;
+  box-shadow: 0 4px 0 #FF0000 inset;
+  animation: rotate-360 2s linear infinite;
+      z-index: 9999;
+}
+
+.loader-ring-track {
+	  right: 60px;
+  bottom: 70px;
+  position: absolute;
+	width: 251px;
+	height: 251px;
+  -moz-border-radius: 240px;
+  -webkit-border-radius: 240px;
+  border-radius: 240px;
+  -moz-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3) inset;
+  -webkit-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3) inset;
+}
+
+@keyframes rotate-360 {
+  from {
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+.ng-scope {
+	display: none;
+}
+.ng-binding {
+    display: none;
+}
+.ng-scope {
+	display: none;
+}
+
+.ng-scope {
+	
+	top: 100px;
+	left: 50%;
+	position: absolute;
+	margin-left: -120px;
+	z-index: 9999999;
+}
+
+.color-picker {
+	width: 240px;
+	height: 240px;
+	z-index: 9999999;
+}
+
+.color-picker input { display: none; }
+.canvas-wrapper {
+	border-radius: 1000px;
+	overflow: hidden;
+}
+.indicator {
+	top: calc(50% - 2rem);
+	left: 50%;
+	display: block;
+	position: absolute;
+	background-color: transparent;
+	transform: translate3d(-50%,-2rem,0);
+	pointer-events: none;
+}
+.indicator .selected-color {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	right: 2px;
+	bottom: 30%;
+	border-radius: 1000px;
+	z-index: -1;
+    background-color: #fff;
+    -webkit-filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+}
+
+.loader-ring-light-color-picker {
+  right: 75px;
+  top: 98px;
+  position: absolute;
+	width: 234px;
+	height: 234px;
+  -moz-border-radius: 240px;
+  -webkit-border-radius: 240px;
+  border-radius: 240px;
+  -moz-box-shadow: 0 4px 0 #000000 inset;
+  -webkit-box-shadow: 0 4px 0 #000000 inset;
+  box-shadow: 0 4px 0 #000000 inset;
+  animation: rotate-360 2s linear infinite;
+  z-index: 9999;
+}
+
+.exit-img{
+	position: absolute;
+	top: 291px;
+	right: 27px;
+	width: 40px;
+	height: 40px
+}
+
+.button-one {
+   padding: 17px 60px;
+   	top: 8px;
+	left: 18%;
+	position: absolute;
+   outline: none;
+   background-color: #00C6C6;
+   border: none;
+   border-radius: 5px;
+   box-shadow: 0 9px #005757;
+
+}
+
+.button-one:hover {
+   background-color: #00C6C6;
+
+   
+}
+
+.button-one:active {
+   background-color: #00C6C6;
+   box-shadow: 0 5px #005757;
+   transform: translateY(4px);
+
 }

@@ -28,7 +28,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -62,20 +62,46 @@
 		
 			<div class="options-panel"> 
 			
-				<p>test</p>
+				
+
 			
 			</div> 
 			<div class="exit-option--panel" src="img/menu-x.svg" ></div> 
 
+			
+			
+			
+			
 	
 		<div class="lamp"><img class="lamp-button" src="img/lamp.svg" width="52" height="52"/></div>
 
-
+		<div class='loader-ring-light' style="display: none;" ></div>
+		
+		<div class='loader-ring-light-color-picker' style="display: none;" ></div>
+		
+		<div class="exit">
+			<img class="exit-img" src="img/menu-x.png" style="display: none;" width="252" height="252"/>
+		</div>
+		
         <div class="circle">
 			<img class="circle-img-1" src="img/circle.png" width="252" height="252"/>
 			<img class="circle-img-2" style="display: none;" src="img/circle-sensor.png" width="252" height="252"/>
 		
 		</div>
+		
+		
+
+		<div class='loader-ring-track'></div>
+		</div>
+
+		<div ng-app="app">
+			<color-picker color="foo"></color-picker>
+			<p style="margin-top: 10px; width: 100%;">color: {{ foo }}</p>
+		</div>
+		
+
+		
+		
         <!-- <div class="circle-sensor"><img class="circle-sensor" src="img/circle-sensor.png" width="232" height="232"/></div>	           /* kad lock-open tad parādās šis aplis */-->
 		
        <!-- <div class="arrow-left"><img class="arrow-left" src="img/arrow-left.png" width="40" height="40"/></div>	
@@ -109,6 +135,7 @@
 
         
         <script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
