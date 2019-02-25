@@ -58,13 +58,24 @@ body {
     }
 }
 
+
+body {
+	background-image: url("https://image.freepik.com/free-vector/geometric-grey-background_1055-3147.jpg");
+	background-size: cover;
+}
+
+
 h1 {
     font-size:24px;
     font-weight:normal;
     overflow:visible;
 
 }
-
+.UdakLogo {
+	top: -18px;
+	left: 20px;
+	position: absolute;
+}
 .event {
     border-radius:4px;
     -webkit-border-radius:4px;
@@ -105,13 +116,26 @@ h1 {
 .lamp {
     padding: 160px;
     position: relative;
-    left: 0px;
+    left: 6px;
+	z-index: 99;
+}
+.lampTurn {
+	top: 235px;
+	position: absolute;
+    left: 167px;
 	z-index: 99;
 }
 .lock {
     position: absolute;
     bottom: 5px;
 	left: 0px;
+	width: 100%;
+	text-align: center;
+}
+.lampOFFF {
+    position: relative;
+    top: -160px;
+	left: -1px;
 	width: 100%;
 	text-align: center;
 }
@@ -183,6 +207,7 @@ h1 {
     top: 30px;  
 	
 	z-index: 999;
+	
 }
 .header {
 	display: inline;
@@ -220,7 +245,7 @@ body {
 	overflow-x: hidden;
 }
 
-.arrowRight {
+.arrowRight {	
   position: relative;
   float: right;
   box-sizing: border-box;
@@ -234,7 +259,8 @@ body {
   margin-right: 40px;
 }
 .arrowRight:hover {
-  
+    border-bottom-width: 4px;
+  border-right-width: 4px;
 }
 
 .arrowLeft {
@@ -251,8 +277,7 @@ body {
   margin-left: 40px;
 }
 .arrowLeft:hover {
-  border-bottom-width: 4px;
-  border-right-width: 4px;
+
 }
 
 #toggle.on span {
@@ -290,6 +315,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: opacity .4s;
+  border-style: solid;
 }
 #menu-anim:after {
   position: absolute;
@@ -325,12 +351,13 @@ li a:focus {
 }
 
 #web {
- margin-top: 20px;	
+
+ padding: 20px;
 
 }
 
 #menu-options {
- margin-top: 35px;
+ margin-top: 23px;	
 	
 }	
 .options-panel {
@@ -442,8 +469,8 @@ li a:focus {
 }
 
 .color-picker {
-	width: 240px;
-	height: 240px;
+	width: 234px;
+	height: 234px;
 	z-index: 9999999;
 }
 
@@ -523,3 +550,25 @@ li a:focus {
    transform: translateY(4px);
 
 }
+
+.xtab {
+  top: -154px;
+  left: 100px;
+  display: block;
+  position: relative;
+}
+.xtab:before,
+.xtab:after {
+  _transition: all 0.3s ease;
+  content: '';
+  position: absolute;
+  width: 173px;
+  top: 50%;
+  height: 1px;
+  background: #888;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.xtab:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);

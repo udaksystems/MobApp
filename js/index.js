@@ -98,9 +98,22 @@ $( document ).ready(function() {
 		$('.ng-scope').hide();	
 		$('.exit-img').hide();	
 		$('.loader-ring-light-color-picker').hide();	
-		$('.lamp').css('left', '0px');
+		$('.lamp').css('left', '6px');
 	});
 	
+		$('.lampTurnOFF').click(function(e) {
+		$('.lampTurnOn').show();	
+		$('.lampTurnOFF').hide();	
+		$('.lamp-button').show();	
+		$('.lampOFF-button').hide();
+	});
+	
+		$('.lampTurnOn').click(function(e) {
+		$('.lampTurnOn').hide();	
+		$('.lampTurnOFF').show();	
+		$('.lampOFF-button').show();	
+		$('.lamp-button').hide();
+	});
 	  
 	$(".lock svg").click(function() {
 		$(this).toggleClass('lock-open');
