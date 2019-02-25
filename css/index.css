@@ -64,7 +64,6 @@ body {
 	background-size: cover;
 }
 
-
 h1 {
     font-size:24px;
     font-weight:normal;
@@ -75,6 +74,19 @@ h1 {
 	top: -18px;
 	left: 20px;
 	position: absolute;
+}
+.LoadingBc {
+	position: absolute;
+	z-index: 99999999999;
+	background-size: cover;
+}
+.Loading-BcLogo {
+	position: absolute;
+	z-index: 99999999999;
+	width: 359px;
+	height: auto;
+	top: 202px;
+	left: 14px;
 }
 .event {
     border-radius:4px;
@@ -259,8 +271,7 @@ body {
   margin-right: 40px;
 }
 .arrowRight:hover {
-    border-bottom-width: 4px;
-  border-right-width: 4px;
+
 }
 
 .arrowLeft {
@@ -572,3 +583,36 @@ li a:focus {
 .xtab:after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+#progressbar{
+  z-index:99999999999;
+  height: 26px;
+  position: absolute;
+  left: 50%;
+  top: 79%;
+  width: 200px;
+  background: rgba(159, 159, 159, 0.5);
+  border-radius: 10px;
+  margin: -20px 0 0 -100px;
+  padding: 2px;
+}
+#loading{
+  transition: all 500ms ease;
+  height: 20px;
+  width: calc(100% - 10px);
+  border-radius: 8px;
+  background: #474747;
+  position: absolute;
+  margin: 3px;
+  display: inline-block;
+  animation: load 5s ease infinite;
+}
+@keyframes load{
+  0%{
+    width: 2%;
+  }
+  10%{
+    width: 10%;
+  }
+}

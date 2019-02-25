@@ -340,7 +340,9 @@ theToggle.onclick = function() {
 }());
 
 
-
+setTimeout(function() {
+  $('.LoadingTime').hide()
+}, 5000);
 
 
 
